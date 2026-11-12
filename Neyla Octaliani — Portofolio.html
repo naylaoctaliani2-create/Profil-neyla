@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Neyla Octaliani — Portofolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff7fb;--surface:#ffffffcc;--text:#2a1b33;--muted:#7a6a85;--p1:#ff6fb1;--p2:#8b5cf6;--p3:#38bdf8;--line:#e9d9f2;--shadow:0 10px 30px #8b5cf61f;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#140d1c;--surface:#21152bcc;--text:#f6ecfb;--muted:#b4a2c2;--line:#3a2750;--shadow:0 10px 30px #0006;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#140d1c;--surface:#21152bcc;--text:#f6ecfb;--muted:#b4a2c2;--line:#3a2750;--shadow:0 10px 30px #0006;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font-family:Poppins,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.blob{position:fixed;border-radius:50%;filter:blur(70px);opacity:.35;z-index:-1;animation:float 14s ease-in-out infinite}
+.b1{width:340px;height:340px;background:var(--p1);top:-80px;left:-80px}
+.b2{width:380px;height:380px;background:var(--p2);bottom:-100px;right:-100px;animation-delay:-5s}
+.b3{width:240px;height:240px;background:var(--p3);top:45%;left:60%;animation-delay:-9s}
+@keyframes float{50%{transform:translate(40px,-50px) scale(1.1)}}
+nav{position:sticky;top:env(safe-area-inset-top,0px);display:flex;justify-content:space-between;align-items:center;padding:14px 6vw;background:var(--surface);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);z-index:10}
+.logo{font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;background:linear-gradient(90deg,var(--p1),var(--p2));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav div{display:flex;gap:18px;align-items:center}
+nav a{color:var(--text);text-decoration:none;font-size:.9rem;font-weight:500;opacity:.8}
+nav a:hover{opacity:1;color:var(--p1)}
+#theme{border:1px solid var(--line);background:var(--surface);border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:1rem}
+section{padding:80px 6vw;max-width:1000px;margin:auto}
+.hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:14px}
+.avatar{position:relative;overflow:hidden;width:150px;height:150px;border-radius:50%;display:grid;place-items:center;font-size:3.6rem;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--p1),var(--p2),var(--p3));box-shadow:0 0 0 8px var(--surface),0 0 0 10px var(--p1),var(--shadow);animation:pulse 4s ease-in-out infinite;cursor:pointer;user-select:none}
+@keyframes pulse{50%{transform:scale(1.05) rotate(3deg)}}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hello{color:var(--muted);letter-spacing:.2em;text-transform:uppercase;font-size:.8rem}
+h1{font-size:clamp(2.2rem,7vw,4rem);line-height:1.1}
+h1 span{background:linear-gradient(90deg,var(--p1),var(--p2),var(--p3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:1.15rem;color:var(--muted);min-height:1.8em}
+.cursor{display:inline-block;width:2px;height:1.1em;background:var(--p1);vertical-align:-3px;margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+.btn{padding:12px 26px;border-radius:99px;text-decoration:none;font-weight:600;font-size:.95rem;transition:.25s}
+.btn.main{background:linear-gradient(90deg,var(--p1),var(--p2));color:#fff;box-shadow:var(--shadow)}
+.btn.ghost{border:1.5px solid var(--p2);color:var(--text)}
+.btn:hover{transform:translateY(-3px)}
+h2{font-size:1.8rem;text-align:center;margin-bottom:8px}
+h2::after{content:"";display:block;width:60px;height:4px;border-radius:4px;margin:10px auto 0;background:linear-gradient(90deg,var(--p1),var(--p2))}
+.sub{text-align:center;color:var(--muted);margin-bottom:40px}
+.about{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:var(--shadow);text-align:center;backdrop-filter:blur(10px)}
+.tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px}
+.tag{padding:7px 16px;border-radius:99px;font-size:.85rem;font-weight:500;background:var(--bg);border:1px solid var(--line);cursor:default;transition:.25s}
+.tag:hover{background:linear-gradient(90deg,var(--p1),var(--p2));color:#fff;transform:scale(1.08) rotate(-2deg)}
+.timeline{position:relative;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:11px;top:0;bottom:0;width:3px;border-radius:3px;background:linear-gradient(var(--p1),var(--p2),var(--p3))}
+.item{position:relative;margin-bottom:22px;opacity:0;transform:translateX(-30px);transition:.7s}
+.item.show{opacity:1;transform:none}
+.item::before{content:"";position:absolute;left:-30px;top:22px;width:17px;height:17px;border-radius:50%;background:var(--bg);border:4px solid var(--p1);transition:.3s}
+.item.open::before{background:var(--p1);box-shadow:0 0 0 6px #ff6fb133}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px 22px;cursor:pointer;box-shadow:var(--shadow);backdrop-filter:blur(10px);transition:.3s}
+.card:hover{transform:translateY(-4px)}
+.top{display:flex;align-items:center;gap:14px}
+.ico{font-size:1.8rem;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,#ff6fb133,#8b5cf633)}
+.lvl{font-size:.72rem;font-weight:600;letter-spacing:.1em;color:var(--p2);text-transform:uppercase}
+.card h3{font-size:1.1rem}
+.arrow{margin-left:auto;transition:.3s;color:var(--muted)}
+.item.open .arrow{transform:rotate(180deg)}
+.more{max-height:0;overflow:hidden;transition:max-height .4s,margin .4s;color:var(--muted);font-size:.92rem}
+.item.open .more{max-height:140px;margin-top:12px}
+.contact{text-align:center}
+.links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.links a{padding:12px 22px;border-radius:16px;background:var(--surface);border:1px solid var(--line);color:var(--text);text-decoration:none;font-weight:500;transition:.25s}
+.links a:hover{background:linear-gradient(90deg,var(--p1),var(--p2));color:#fff;transform:translateY(-4px)}
+footer{text-align:center;padding:30px 6vw;color:var(--muted);font-size:.85rem}
+.heart{position:fixed;pointer-events:none;font-size:1.4rem;animation:up 1.2s forwards;z-index:20}
+@keyframes up{to{transform:translateY(-120px) scale(1.5);opacity:0}}
+@media(max-width:600px){nav a.hide{display:none}section{padding:60px 5vw}}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+
+<nav>
+  <span class="logo">Neyla ✦</span>
+  <div>
+    <a class="hide" href="#about">Tentang</a>
+    <a class="hide" href="#school">Pendidikan</a>
+    <a href="#contact">Kontak</a>
+    <button id="theme" aria-label="Ganti tema">🌙</button>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="avatar" id="avatar" title="Klik aku!"><img src="https://u.pone.rs/wngnxaxc.jpg" alt="Foto Neyla Octaliani" onerror="this.remove()">NO</div>
+  <p class="hello">Halo, saya</p>
+  <h1><span>Neyla Octaliani</span></h1>
+  <p class="role">Siswi PPLG · <span id="typed"></span><span class="cursor"></span></p>
+  <div class="btns">
+    <a class="btn main" href="#school">Lihat Perjalanan Sekolah</a>
+    <a class="btn ghost" href="#contact">Hubungi Saya</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2>Tentang Saya</h2>
+  <p class="sub">Sedikit perkenalan</p>
+  <div class="about">
+    <p>Hai, saya Neyla Octaliani, siswi SMKN 1 Bangkinang jurusan Pengembangan Perangkat Lunak dan Gim (PPLG). Saya suka belajar hal baru, terutama dunia teknologi, pemrograman, dan desain digital.</p>
+    <div class="tags">
+      <span class="tag">💻 Pemrograman</span><span class="tag">🌐 Web</span><span class="tag">🎮 Gim</span><span class="tag">🎨 Desain</span><span class="tag">📚 Belajar</span>
+    </div>
+  </div>
+</section>
+
+<section id="school">
+  <h2>Riwayat Pendidikan</h2>
+  <p class="sub">Klik kartu untuk melihat detail</p>
+  <div class="timeline">
+    <div class="item"><div class="card"><div class="top"><div class="ico">🧸</div><div><div class="lvl">Taman Kanak-kanak</div><h3>TK Bangkiba</h3></div><span class="arrow">▾</span></div><div class="more">Langkah pertama di dunia pendidikan: belajar bermain, mengenal huruf dan angka, serta berteman.</div></div></div>
+    <div class="item"><div class="card"><div class="top"><div class="ico">🎒</div><div><div class="lvl">Sekolah Dasar</div><h3>SD 007 Bangkinang</h3></div><span class="arrow">▾</span></div><div class="more">Membangun dasar membaca, menulis, berhitung, dan kebiasaan belajar yang baik.</div></div></div>
+    <div class="item"><div class="card"><div class="top"><div class="ico">📖</div><div><div class="lvl">Sekolah Menengah Pertama</div><h3>SMPN 2 Bangkinang</h3></div><span class="arrow">▾</span></div><div class="more">Masa menemukan minat dan bakat, belajar mandiri, serta mulai mengenal teknologi.</div></div></div>
+    <div class="item"><div class="card"><div class="top"><div class="ico">🚀</div><div><div class="lvl">Sekolah Menengah Kejuruan</div><h3>SMKN 1 Bangkinang</h3></div><span class="arrow">▾</span></div><div class="more">Jurusan <b>PPLG</b> (Pengembangan Perangkat Lunak dan Gim). Fokus belajar coding, pembuatan aplikasi, web, dan gim. Sedang berproses menuju karier di dunia teknologi.</div></div></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Mari Terhubung</h2>
+  <p class="sub">Ikuti dan hubungi Neyla lewat tautan berikut</p>
+  <div class="links">
+    <a href="https://instagram.com/neylaoctaliani" target="_blank" rel="noopener">📸 @neylaoctaliani</a><a href="mailto:naylaoctaliani2@gmail.com">✉️ naylaoctaliani2@gmail.com</a><a href="https://github.com/neylaoctaaliani" target="_blank" rel="noopener">💼 neylaoctaaliani</a>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> Neyla Octaliani · Dibuat dengan 💖</footer>
+
+<script>
+// Efek mengetik
+const words=["Calon Programmer","Web Enthusiast","Pembelajar Cepat","Kreatif & Rajin"];
+let w=0,c=0,del=false;const t=document.getElementById("typed");
+(function type(){
+  const cur=words[w];
+  t.textContent=cur.slice(0,del?--c:++c);
+  let d=del?50:100;
+  if(!del&&c===cur.length){del=true;d=1400}
+  else if(del&&c===0){del=false;w=(w+1)%words.length;d=300}
+  setTimeout(type,d);
+})();
+
+// Timeline: muncul saat scroll + buka/tutup kartu
+const items=document.querySelectorAll(".item");
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");io.unobserve(e.target)}}),{threshold:.2});
+items.forEach((it,i)=>{it.style.transitionDelay=(i*0.08)+"s";io.observe(it);
+  it.querySelector(".card").addEventListener("click",()=>{
+    const was=it.classList.contains("open");
+    items.forEach(x=>x.classList.remove("open"));
+    if(!was)it.classList.add("open");
+  });
+});
+
+// Tema gelap/terang
+const root=document.documentElement,btn=document.getElementById("theme");
+const isDark=()=>root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;
+const sync=()=>btn.textContent=isDark()?"☀️":"🌙";
+btn.onclick=()=>{root.dataset.theme=isDark()?"light":"dark";sync()};
+sync();
+
+// Klik avatar = hati beterbangan
+document.getElementById("avatar").addEventListener("click",e=>{
+  for(let i=0;i<6;i++){
+    const h=document.createElement("span");h.className="heart";h.textContent=["💖","✨","💜","🌸"][i%4];
+    h.style.left=(e.clientX+(Math.random()*80-40))+"px";h.style.top=(e.clientY+(Math.random()*30-15))+"px";
+    document.body.appendChild(h);setTimeout(()=>h.remove(),1200);
+  }
+});
+document.getElementById("yr").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
